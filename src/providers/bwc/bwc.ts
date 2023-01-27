@@ -69,7 +69,8 @@ export class BwcProvider {
       timeout: 100000,
       transports: ['polling'],
       bp_partner: opts.bp_partner,
-      bp_partner_version: opts.bp_partner_version
+      bp_partner_version: opts.bp_partner_version,
+      doNotVerifyPayPro: true
     });
 
     if (walletData) bwc.fromString(walletData);

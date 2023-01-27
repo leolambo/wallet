@@ -27,7 +27,8 @@ export class PayproProvider {
     this.logger.info('PayPro Options: try... ' + attempt);
     const bwc = this.bwcProvider.getPayProV2();
     const options: any = {
-      paymentUrl
+      paymentUrl,
+      unsafeBypassValidation: true
     };
     if (!disableLoader) {
       this.onGoingProcessProvider.set('fetchingPayProOptions');
@@ -62,7 +63,8 @@ export class PayproProvider {
       paymentUrl,
       chain,
       currency: coin.toUpperCase(),
-      payload
+      payload,
+      unsafeBypassValidation: true
     };
     if (!disableLoader) {
       this.onGoingProcessProvider.set('fetchingPayPro');
