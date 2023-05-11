@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/derivation/bch/index.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,yBAAyB,EAAE,MAAM,QAAQ,CAAC;AACnD,qBAAa,UAAW,SAAQ,yBAAyB;IACvD,UAAU,MAAkB;IAC5B,aAAa,CAAC,OAAO,KAAA,EAAE,MAAM,KAAA,EAAE,YAAY,KAAA,EAAE,QAAQ,KAAA;IAOrD,gBAAgB,CAAC,OAAO,KAAA,EAAE,KAAK,KAAA,EAAE,YAAY,KAAA,EAAE,QAAQ,KAAA;;;;;CASxD"}

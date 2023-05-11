@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/derivation/xrp/index.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,QAAQ,EAAE,MAAM,IAAI,CAAC;AAI9B,qBAAa,UAAW,YAAW,QAAQ;IACzC,aAAa,CAAC,OAAO,KAAA,EAAE,OAAO,KAAA,EAAE,YAAY,KAAA,EAAE,QAAQ,KAAA;IAStD,gBAAgB,CAAC,OAAO,KAAA,EAAE,KAAK,KAAA,EAAE,YAAY,KAAA,EAAE,QAAQ,KAAA;;;;;CAUxD"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/validation/xrp/index.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,WAAW,EAAE,MAAM,IAAI,CAAC;AAIjC,qBAAa,aAAc,YAAW,WAAW;IAC/C,eAAe,CAAC,QAAQ,EAAE,MAAM,EAAE,OAAO,EAAE,MAAM,GAAG,OAAO;IA4B3D,WAAW,CAAC,UAAU,EAAE,MAAM,GAAG,OAAO;IASxC,OAAO,CAAC,cAAc;CAKvB"}

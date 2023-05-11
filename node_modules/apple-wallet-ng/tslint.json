@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rules": {
+    "no-submodule-imports": [
+      true,
+      "zone.js",
+      "rxjs",
+      "@angular"
+    ]
+  }
+}

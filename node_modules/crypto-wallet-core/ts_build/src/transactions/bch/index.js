@@ -1,0 +1,50 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var btc_1 = require("../btc");
+var BCHTxProvider = (function (_super) {
+    __extends(BCHTxProvider, _super);
+    function BCHTxProvider() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.lib = require('bitcore-lib-cash');
+        return _this;
+    }
+    BCHTxProvider.prototype.create = function (_a) {
+        var _this = this;
+        var recipients = _a.recipients, _b = _a.utxos, utxos = _b === void 0 ? [] : _b, change = _a.change, wallet = _a.wallet, _c = _a.fee, fee = _c === void 0 ? 20000 : _c;
+        change = change || wallet.deriveAddress(wallet.addressIndex, true);
+        var filteredUtxos = this.selectCoins(recipients, utxos, fee);
+        var btcUtxos = filteredUtxos.map(function (utxo) {
+            var btcUtxo = Object.assign({}, utxo, {
+                amount: utxo.value / 1e8,
+                txid: utxo.mintTxid,
+                outputIndex: utxo.mintIndex
+            });
+            return new _this.lib.Transaction.UnspentOutput(btcUtxo);
+        });
+        var tx = new this.lib.Transaction().from(btcUtxos).feePerByte(Number(fee) + 2);
+        if (change) {
+            tx.change(change);
+        }
+        for (var _i = 0, recipients_1 = recipients; _i < recipients_1.length; _i++) {
+            var recipient = recipients_1[_i];
+            tx.to(recipient.address, parseInt(recipient.amount));
+        }
+        return tx.uncheckedSerialize();
+    };
+    return BCHTxProvider;
+}(btc_1.BTCTxProvider));
+exports.BCHTxProvider = BCHTxProvider;
+//# sourceMappingURL=index.js.map
